@@ -9,7 +9,7 @@ const ProductList = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [clickedButton, setClickedButton] = useState(null); // Track clicked button
-  const API_URL = "https://backend-2c1rzngeo-anil29717s-projects.vercel.app";
+  const API_URL = "https://backend-orpin-omega.vercel.app/";
 
   useEffect(() => {
     const fetchProducts = async () => {
