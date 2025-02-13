@@ -10,7 +10,7 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("COD"); // Default: Cash on Delivery
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
+const API_URL = "https://backend-9qnigco56-anil29717s-projects.vercel.app";
   const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const handleOrder = async () => {
@@ -34,7 +34,7 @@ const Checkout = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:5000/api/orders", orderData);
+      const response = await axios.post(`${API_URL}/api/orders`, orderData);
       alert("🎉 Order Placed Successfully!");
       setCart([]); // Clear cart
       navigate("/");
