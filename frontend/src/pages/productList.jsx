@@ -9,12 +9,13 @@ const ProductList = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [clickedButton, setClickedButton] = useState(null); // Track clicked button
+  const API_URL = "https://backend-2c1rzngeo-anil29717s-projects.vercel.app";
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:5000/api/products?page=${page}&limit=8`);
+        const response = await axios.get(`${API_URL}/api/products?page=${page}&limit=8`);
         setProducts((prev) => [...prev, ...response.data]); // Append new products
         setLoading(false);
       } catch (error) {
